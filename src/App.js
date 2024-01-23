@@ -4,7 +4,13 @@ import BookCreate from "./components/BookCreate";
 function App() {
   const [books, setBooks] = useState([]);
   const createBook = (title) => {
-    setBooks([...books,title])
+    setBooks([
+      ...books,
+      {
+        id: Math.floor(Math.random() * 99),
+        title,
+      },
+    ]);
   };
   console.log(books);
 
