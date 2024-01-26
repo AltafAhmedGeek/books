@@ -13020,7 +13020,7 @@ screen and (min-width: 769px) {
     background-color: #00d1b2;
     bottom: 0;
     padding: 20px 40px 30px;
-    position: fixed;
+    position: sticky;
     width: 100%;
 }
 
