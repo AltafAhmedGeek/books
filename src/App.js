@@ -22,13 +22,21 @@ function App() {
         title,
       }
     );
-    console.log(res.data);
+    //console.log(res, "ss");
     setBooks([...books, res.data]);
   };
-  const editBookById = (id, newTitle) => {
+  const editBookById = async (id, newTitle) => {
+    const res = await axios.put(
+      `http://localhost:3001/books/${id}`,
+
+      {
+        title: newTitle,
+      }
+    );
+    //console.log(res.data);
     const updatedBookList = books.map((book) => {
       if (book.id === id) {
-        return { ...book, title: newTitle };
+        return { ...book, ...res.data };
       }
       return book;
     });
