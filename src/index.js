@@ -2,11 +2,14 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import "./index.css";
+import BookContext from "./context/BookContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <BookContext.Provider value={5}>
+      <App />
+    </BookContext.Provider>
   </React.StrictMode>
 );
 
