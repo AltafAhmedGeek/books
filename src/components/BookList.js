@@ -15,10 +15,11 @@ const BookList = ({ books, onDelete, onEdit }) => {
       </div>
     );
   });
-  const number = useContext(BookContext);
+  const {count,incrementCount} = useContext(BookContext);
   return (
     <div className="book-list">
-      <div>{number}</div>
+      <div>{count}</div>
+      <button onClick={incrementCount}>incrementCount</button>
       {renderedBooks}
     </div>
   );
