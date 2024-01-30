@@ -15,11 +15,8 @@ const BookList = ({ books, onDelete, onEdit }) => {
       </div>
     );
   });
-  const {count,incrementCount} = useContext(BookContext);
   return (
     <div className="book-list">
-      <div>{count}</div>
-      <button onClick={incrementCount}>incrementCount</button>
       {renderedBooks}
     </div>
   );
