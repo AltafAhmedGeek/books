@@ -2,7 +2,8 @@ import React, { useContext } from "react";
 import BookShow from "./BookShow";
 import BookContext from "../context/BookContext";
 
-const BookList = ({ books, onDelete, onEdit }) => {
+const BookList = () => {
+  const { books, onDelete, onEdit } = useContext(BookContext);
   const renderedBooks = books.map((book) => {
     return (
       <div>
@@ -15,11 +16,7 @@ const BookList = ({ books, onDelete, onEdit }) => {
       </div>
     );
   });
-  return (
-    <div className="book-list">
-      {renderedBooks}
-    </div>
-  );
+  return <div className="book-list">{renderedBooks}</div>;
 };
 
 export default BookList;
